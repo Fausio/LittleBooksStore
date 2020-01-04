@@ -8,7 +8,6 @@ namespace LittleBooksStore.Services
     interface IRepository<T>
     {
         T GetT(int id);
-
         IEnumerable<T> GetAll();
         bool Add(T item);
         bool Delete(T item);
