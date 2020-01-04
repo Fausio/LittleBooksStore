@@ -8,14 +8,35 @@ namespace LittleBooksStore.Services
 {
     public class MockBooksRepository : IRepository<Book>
     {
+        private List<Book> _book;
+
         public bool Add(Book item)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Book Book = item;
+                Book.Id = _book.Max(id => id.Id) + 1;
+                _book.Add(Book);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
         }
 
         public bool Delete(Book item)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _book.Remove(item);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public bool Edit(Book item)
@@ -25,12 +46,173 @@ namespace LittleBooksStore.Services
 
         public IEnumerable<Book> GetAll()
         {
-            throw new NotImplementedException();
+            return _book.ToList();
         }
 
-        public Book GetT(int id)
+        public Book Get(int id)
         {
-            throw new NotImplementedException();
+            return _book.FirstOrDefault(book => book.Id == id);
+        }
+
+
+        public MockBooksRepository()
+        { 
+            _book = new List<Book>();
+            _book.Add(
+                new Book()
+                {
+                    Id = 1,
+                    Title = "The Witcher 3",
+                    Description = "Geralt the Wolf of Rivia",
+                    Author = "Fausio Matsinhe",
+                    PublishDate = "July, 2018",
+                    Price = 39.01,
+                    image = ""
+                });
+
+            _book.Add(
+                 new Book()
+                 {
+                     Id = 2,
+                     Title = "The Hobbit",
+                     Description = "Lord of the rings",
+                     Author = "Carlos Uchia",
+                     PublishDate = "Jan, 2020",
+                     Price = 39.01,
+                     image = ""
+                 });
+            _book.Add(
+                new Book()
+                {
+                    Id = 3,
+                    Title = "The Hobbit",
+                    Description = "Lord of the rings",
+                    Author = "Carlos Uchia",
+                    PublishDate = "Jan, 2020",
+                    Price = 39.01,
+                    image = ""
+                });
+            _book.Add(
+                new Book()
+                {
+                    Id = 4,
+                    Title = "The Hobbit",
+                    Description = "Lord of the rings",
+                    Author = "Carlos Uchia",
+                    PublishDate = "Jan, 2020",
+                    Price = 39.01,
+                    image = ""
+                });
+            _book.Add(
+                new Book()
+                {
+                    Id = 5,
+                    Title = "The Hobbit",
+                    Description = "Lord of the rings",
+                    Author = "Carlos Uchia",
+                    PublishDate = "Jan, 2020",
+                    Price = 39.01,
+                    image = ""
+                });
+            _book.Add(
+                new Book()
+                {
+                    Id = 6,
+                    Title = "The Hobbit",
+                    Description = "Lord of the rings",
+                    Author = "Carlos Uchia",
+                    PublishDate = "Jan, 2020",
+                    Price = 39.01,
+                    image = ""
+                });
+            _book.Add(
+                new Book()
+                {
+                    Id = 7,
+                    Title = "The Hobbit",
+                    Description = "Lord of the rings",
+                    Author = "Carlos Uchia",
+                    PublishDate = "Jan, 2020",
+                    Price = 39.01,
+                    image = ""
+                });
+            _book.Add(
+                new Book()
+                {
+                    Id = 8,
+                    Title = "The Hobbit",
+                    Description = "Lord of the rings",
+                    Author = "Carlos Uchia",
+                    PublishDate = "Jan, 2020",
+                    Price = 39.01,
+                    image = ""
+                });
+            _book.Add(
+                new Book()
+                {
+                    Id = 9,
+                    Title = "The Hobbit",
+                    Description = "Lord of the rings",
+                    Author = "Carlos Uchia",
+                    PublishDate = "Jan, 2020",
+                    Price = 39.01,
+                    image = ""
+                });
+            _book.Add(
+                new Book()
+                {
+                    Id = 10,
+                    Title = "The Hobbit",
+                    Description = "Lord of the rings",
+                    Author = "Carlos Uchia",
+                    PublishDate = "Jan, 2020",
+                    Price = 39.01,
+                    image = ""
+                });
+            _book.Add(
+                new Book()
+                {
+                    Id = 12,
+                    Title = "The Hobbit",
+                    Description = "Lord of the rings",
+                    Author = "Carlos Uchia",
+                    PublishDate = "Jan, 2020",
+                    Price = 39.01,
+                    image = ""
+                });
+            _book.Add(
+                new Book()
+                {
+                    Id = 13,
+                    Title = "The Hobbit",
+                    Description = "Lord of the rings",
+                    Author = "Carlos Uchia",
+                    PublishDate = "Jan, 2020",
+                    Price = 39.01,
+                    image = ""
+                });
+            _book.Add(
+                new Book()
+                {
+                    Id = 14,
+                    Title = "The Hobbit",
+                    Description = "Lord of the rings",
+                    Author = "Carlos Uchia",
+                    PublishDate = "Jan, 2020",
+                    Price = 39.01,
+                    image = ""
+                });
+            _book.Add(
+                new Book()
+                {
+                    Id = 15,
+                    Title = "The Hobbit",
+                    Description = "Lord of the rings",
+                    Author = "Carlos Uchia",
+                    PublishDate = "Jan, 2020",
+                    Price = 39.01,
+                    image = ""
+                });
         }
     }
 }
