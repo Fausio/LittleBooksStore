@@ -13,6 +13,7 @@ namespace LittleBooksStore.Controllers
     {
         IRepository<Book> _Bookrepo;
         IRepository<Carousel> _Caroucelrepo;
+        IRepository<Order> _Orderrepo;
 
         //the  home page
         public IActionResult Index()
@@ -77,13 +78,26 @@ namespace LittleBooksStore.Controllers
 
         public IActionResult Order(int? Id)
         {
+            if (Id!=0 && Id>0)
+            {
+                var OrderViewModel = new OrderViewModel()
+                {
+                    BookToOrder = _Bookrepo.Get((int)Id),
+                    OrderDetails = new Order()
+                    {
+                        BookId = (int)Id
+                    }
+                };
+                return View(OrderViewModel);
+            }
             return View();
         }
 
-        public HomeController(IRepository<Book> book, IRepository<Carousel> carousel)
+        public HomeController(IRepository<Book> book, IRepository<Carousel> carousel, IRepository<Order> order)
         {
             _Bookrepo = book;
             _Caroucelrepo = carousel   ;
+            _Orderrepo = order;
         }
     }
 }

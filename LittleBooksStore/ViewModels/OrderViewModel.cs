@@ -9,6 +9,6 @@ namespace LittleBooksStore.ViewModels
     public class OrderViewModel
     {
         public Book BookToOrder { get; set; }
-        public Order Order { get; set; }
+        public Order OrderDetails { get; set; }
     }
 }
