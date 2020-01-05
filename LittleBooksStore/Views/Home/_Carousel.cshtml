@@ -10,7 +10,7 @@
         <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
 
-    <div class="carousel-inner">
+    <div class="carousel-inner bg-secondary">
         @foreach (var item in Model)
         {
 
@@ -34,13 +34,13 @@
               
 
 
-            <div class="container">
-                <div class="row" style="padding-top:25px">
-                    <div class="col-md-4">
-                        <img src="~/images/@item.ImageURL" class="img img-responsive"  width="250" />
+            <div class="container  ">
+                <div class="row" style="padding-top:25px; padding-bottom:25px;">
+                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-4">
+                        <img src="~/images/@item.ImageURL"  class="img-fluid" alt="Responsive image" width="400" />
                     </div>
-                    <div class="col-md-8">
-                        <div class="carousel-caption text-left">
+                    <div class="col-md-8 col-lg-8 col-xl-8 col-sm-8">
+                        <div class="carousel-caption   align-text-top">
                             <h1>@item.Title.</h1>
                             <p>@item.Description ...</p>
                             <p><a class="btn btn-primary" href="/Home/Details/@item.Id" role="button"> Read More </a></p>
