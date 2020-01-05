@@ -1,0 +1,27 @@
+﻿@model LittleBooksStore.Models.Book
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<section class="jumbotron text-center">
+    <div class="container">
+ 
+        <h1 class="display-4">@Model.Title</h1>
+        <h5>$@Model.Price</h5>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <img src="~/images/@Model.image" class="img-fluid" alt="@Model.Title" />
+        </div>
+        <div class="col-lg-8">
+            <p>@Model.Description</p>
+            <a class="btn btn-lg btn-primary" href="/Home/Order/@Model.Id">Buy</a>
+        </div>
+    </div>
+</div>
+
+<br />

@@ -9,12 +9,12 @@
 <h2 class="text text-center">Books' List</h2>
 <br />
 
-<div class="container marketing">
+<div class="container  justify-content-lg-center">
     <div class="row">
         @foreach (var item in Model.Books)
         {
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4">
-                <img class="rounded figure-img" src="~/images/@item.image" alt="@item.Title" width="140" />
+            <div class="col-lg-2  ">
+                <img class="img-thumbnail  " src="~/images/@item.image" alt="@item.Title" width="140" />
                 <h5>@item.Title</h5>
                 <p><a class="btn btn-secondary" href="/Home/Details/@item.Id" role="button"> View details</a></p>
             </div>
