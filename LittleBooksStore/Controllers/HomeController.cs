@@ -11,8 +11,8 @@ namespace LittleBooksStore.Controllers
 {
     public class HomeController : Controller
     {
-          IRepository<Book> _Bookrepo;
-          IRepository<Carousel> _Caroucelrepo;
+        IRepository<Book> _Bookrepo;
+        IRepository<Carousel> _Caroucelrepo;
 
         //the  home page
         public IActionResult Index()
@@ -23,7 +23,7 @@ namespace LittleBooksStore.Controllers
                 Carousels = _Caroucelrepo.GetAll()
             };
 
-              return View(viewmodel);
+            return View(viewmodel);
         }
 
 
@@ -40,9 +40,32 @@ namespace LittleBooksStore.Controllers
         }
 
 
+        [HttpGet]
         //the  Add Book
         public IActionResult AddBook()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddBook(Book book )
+        {
+            if (ModelState.IsValid)
+            {
+                Book Item = new Book()
+                {
+                    Id = _Bookrepo.GetAll().Max(book => book.Id) + 1,
+                    Author = book.Author,
+                    Description = book.Description,
+                    image = book.image,
+                    Price = book.Price,
+                    PublishDate = book.PublishDate,
+                    Title = book.Title
+                };
+
+                _Bookrepo.Add(Item);
+                 return View();
+            }
             return View();
         }
 
