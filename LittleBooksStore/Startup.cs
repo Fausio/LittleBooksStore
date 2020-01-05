@@ -48,6 +48,7 @@ namespace LittleBooksStore
             //    });
             //});
             app.UseMvc(ConfigurationRoutes);
+            app.UseStaticFiles() ;
         }
 
         private static void ConfigurationRoutes(IRouteBuilder route)
