@@ -50,9 +50,11 @@ namespace LittleBooksStore.Services
 
         public MockCarouselRepository()
         {
+            _caroucel = new List<Carousel>();
+
             _caroucel.Add(new Carousel()
             {
-                Id = 0,
+                Id = 1,
                 Title = "Discount Book",
                 Description = "Discount books get them all",
                 ImageURL = ""
@@ -60,7 +62,7 @@ namespace LittleBooksStore.Services
 
             _caroucel.Add(new Carousel()
             {
-                Id = 0,
+                Id = 2,
                 Title = "New Book",
                 Description = "All brand new books",
                 ImageURL = ""
@@ -68,7 +70,7 @@ namespace LittleBooksStore.Services
 
             _caroucel.Add(new Carousel()
             {
-                Id = 0,
+                Id = 3,
                 Title = "Sunscription",
                 Description = "Discount on monthly Sunscription",
                 ImageURL = ""
