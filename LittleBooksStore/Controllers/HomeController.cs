@@ -5,17 +5,25 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using LittleBooksStore.Models;
 using LittleBooksStore.Services;
+using LittleBooksStore.ViewModels;
 
 namespace LittleBooksStore.Controllers
 {
     public class HomeController : Controller
     {
-          IRepository<Book> _repo; 
+          IRepository<Book> _Bookrepo;
+          IRepository<Carousel> _Caroucelrepo;
 
         //the  home page
         public IActionResult Index()
         {
-              return View(_repo.GetAll());
+            var viewmodel = new HomeIndexViewModel()
+            {
+                Books = _Bookrepo.GetAll(),
+                Carousels = _Caroucelrepo.GetAll()
+            };
+
+              return View(viewmodel);
         }
 
 
@@ -32,9 +40,16 @@ namespace LittleBooksStore.Controllers
         }
 
 
+        //the  Add Book
+        public IActionResult AddBook()
+        {
+            return View();
+        }
+
         public HomeController()
         {
-            _repo = new MockBooksRepository();
+            _Bookrepo = new MockBooksRepository();
+            _Caroucelrepo = new MockCarouselRepository();
         }
     }
 }
