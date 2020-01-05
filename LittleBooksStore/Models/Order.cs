@@ -30,5 +30,19 @@ namespace LittleBooksStore.Models
         [Required(ErrorMessage ="Country is Required.")]
         [DataType(DataType.Text)]
         public string Country { get; set; }
+
+        [Required(ErrorMessage = "Postalcode is Required.")]
+        [DataType(DataType.PostalCode)]
+        public string ZIP { get; set; }
+
+        [Required(ErrorMessage = "Phone number is Required.")]
+        [DataType(DataType.PhoneNumber, ErrorMessage ="Please enter a valid phone number")]
+        public string Phone { get; set; }
+
+        [Required(ErrorMessage = "Email is Required.")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "Please enter a valid email address")]
+        public string Email { get; set; }
+
+
     }
 }
