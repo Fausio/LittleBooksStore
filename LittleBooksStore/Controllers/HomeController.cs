@@ -69,10 +69,10 @@ namespace LittleBooksStore.Controllers
             return View();
         }
 
-        public HomeController()
+        public HomeController(IRepository<Book> book, IRepository<Carousel> carousel)
         {
-            _Bookrepo = new MockBooksRepository();
-            _Caroucelrepo = new MockCarouselRepository();
+            _Bookrepo = book;
+            _Caroucelrepo = carousel   ;
         }
     }
 }

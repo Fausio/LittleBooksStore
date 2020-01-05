@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LittleBooksStore.Models;
+using LittleBooksStore.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -18,8 +20,13 @@ namespace LittleBooksStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc( option => option.EnableEndpointRouting = false);
- 
-   
+
+            //adding the services for the aplication read the DI in Home Controller Constror
+            services.AddSingleton<IRepository<Book>, MockBooksRepository>();
+            services.AddTransient<IRepository<Carousel>, MockCarouselRepository>();
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

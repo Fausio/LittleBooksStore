@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace LittleBooksStore.Services
 {
-    interface IRepository<T>
+   public interface IRepository<T>
     {
         T Get(int id);
         IEnumerable<T> GetAll();
