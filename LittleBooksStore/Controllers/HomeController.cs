@@ -12,8 +12,7 @@ namespace LittleBooksStore.Controllers
     public class HomeController : Controller
     {
         IRepository<Book> _Bookrepo;
-        IRepository<Carousel> _Caroucelrepo;
-        IRepository<Order> _Orderrepo;
+        IRepository<Carousel> _Caroucelrepo; 
 
         //the  home page
         public IActionResult Index()
@@ -49,7 +48,7 @@ namespace LittleBooksStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddBook(Book book )
+        public IActionResult AddBook(Book book)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +64,7 @@ namespace LittleBooksStore.Controllers
                 };
 
                 _Bookrepo.Add(Item);
-                 return View();
+                return View();
             }
             return View();
         }
@@ -78,7 +77,7 @@ namespace LittleBooksStore.Controllers
 
         public IActionResult Order(int? Id)
         {
-            if (Id!=0 && Id>0)
+            if (Id != 0 && Id > 0)
             {
                 var OrderViewModel = new OrderViewModel()
                 {
@@ -93,11 +92,40 @@ namespace LittleBooksStore.Controllers
             return View();
         }
 
-        public HomeController(IRepository<Book> book, IRepository<Carousel> carousel, IRepository<Order> order)
+        [HttpPost]
+        public IActionResult Order(int Id,Order order)
+        {
+            if (ModelState.IsValid)
+            {
+                if (_Bookrepo.GetAll().Count(x => x.Id == order.BookId) >=1)
+                {
+                    return RedirectToAction("ThankYou");
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            else
+            {
+                var book = _Bookrepo.Get(Id);
+                var vm = new OrderViewModel()
+                {
+                    BookToOrder = book,
+                    OrderDetails = order
+                };
+
+                return View(vm);
+
+            }
+            
+        }
+
+        public HomeController(IRepository<Book> book, IRepository<Carousel> carousel)
         {
             _Bookrepo = book;
-            _Caroucelrepo = carousel   ;
-            _Orderrepo = order;
+            _Caroucelrepo = carousel;
+
         }
     }
 }
