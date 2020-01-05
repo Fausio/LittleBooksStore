@@ -69,6 +69,13 @@ namespace LittleBooksStore.Controllers
             return View();
         }
 
+        [HttpGet]
+        //the  Add Book
+        public IActionResult Details(int Id)
+        {
+            return View( );
+        }
+ 
         public HomeController(IRepository<Book> book, IRepository<Carousel> carousel)
         {
             _Bookrepo = book;

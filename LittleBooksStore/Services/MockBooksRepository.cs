@@ -67,7 +67,7 @@ namespace LittleBooksStore.Services
                     Author = "Fausio Matsinhe",
                     PublishDate = "July, 2018",
                     Price = 39.01,
-                    image = ""
+                    image = "b1.png"
                 });
 
             _book.Add(
@@ -79,7 +79,7 @@ namespace LittleBooksStore.Services
                      Author = "Carlos Uchia",
                      PublishDate = "Jan, 2020",
                      Price = 39.01,
-                     image = ""
+                     image = "b2.png"
                  });
             _book.Add(
                 new Book()
@@ -90,7 +90,7 @@ namespace LittleBooksStore.Services
                     Author = "Carlos Uchia",
                     PublishDate = "Jan, 2020",
                     Price = 39.01,
-                    image = ""
+                    image = "b3.png"
                 });
             _book.Add(
                 new Book()
@@ -101,7 +101,7 @@ namespace LittleBooksStore.Services
                     Author = "Carlos Uchia",
                     PublishDate = "Jan, 2020",
                     Price = 39.01,
-                    image = ""
+                    image = "b4.png"
                 });
             _book.Add(
                 new Book()
@@ -112,7 +112,7 @@ namespace LittleBooksStore.Services
                     Author = "Carlos Uchia",
                     PublishDate = "Jan, 2020",
                     Price = 39.01,
-                    image = ""
+                    image = "b5.png"
                 });
             _book.Add(
                 new Book()
@@ -123,7 +123,7 @@ namespace LittleBooksStore.Services
                     Author = "Carlos Uchia",
                     PublishDate = "Jan, 2020",
                     Price = 39.01,
-                    image = ""
+                    image = "b6.png"
                 });
             _book.Add(
                 new Book()
@@ -134,7 +134,7 @@ namespace LittleBooksStore.Services
                     Author = "Carlos Uchia",
                     PublishDate = "Jan, 2020",
                     Price = 39.01,
-                    image = ""
+                    image = "b7.png"
                 });
             _book.Add(
                 new Book()
@@ -145,74 +145,9 @@ namespace LittleBooksStore.Services
                     Author = "Carlos Uchia",
                     PublishDate = "Jan, 2020",
                     Price = 39.01,
-                    image = ""
+                    image = "b8.png"
                 });
-            _book.Add(
-                new Book()
-                {
-                    Id = 9,
-                    Title = "The Hobbit",
-                    Description = "Lord of the rings",
-                    Author = "Carlos Uchia",
-                    PublishDate = "Jan, 2020",
-                    Price = 39.01,
-                    image = ""
-                });
-            _book.Add(
-                new Book()
-                {
-                    Id = 10,
-                    Title = "The Hobbit",
-                    Description = "Lord of the rings",
-                    Author = "Carlos Uchia",
-                    PublishDate = "Jan, 2020",
-                    Price = 39.01,
-                    image = ""
-                });
-            _book.Add(
-                new Book()
-                {
-                    Id = 12,
-                    Title = "The Hobbit",
-                    Description = "Lord of the rings",
-                    Author = "Carlos Uchia",
-                    PublishDate = "Jan, 2020",
-                    Price = 39.01,
-                    image = ""
-                });
-            _book.Add(
-                new Book()
-                {
-                    Id = 13,
-                    Title = "The Hobbit",
-                    Description = "Lord of the rings",
-                    Author = "Carlos Uchia",
-                    PublishDate = "Jan, 2020",
-                    Price = 39.01,
-                    image = ""
-                });
-            _book.Add(
-                new Book()
-                {
-                    Id = 14,
-                    Title = "The Hobbit",
-                    Description = "Lord of the rings",
-                    Author = "Carlos Uchia",
-                    PublishDate = "Jan, 2020",
-                    Price = 39.01,
-                    image = ""
-                });
-            _book.Add(
-                new Book()
-                {
-                    Id = 15,
-                    Title = "The Hobbit",
-                    Description = "Lord of the rings",
-                    Author = "Carlos Uchia",
-                    PublishDate = "Jan, 2020",
-                    Price = 39.01,
-                    image = ""
-                });
+            
         }
     }
 }

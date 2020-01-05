@@ -54,10 +54,10 @@ namespace LittleBooksStore.Services
 
             _caroucel.Add(new Carousel()
             {
-                Id = 1,
+                Id = 1, 
                 Title = "Discount Book",
                 Description = "Discount books get them all",
-                ImageURL = ""
+                ImageURL = "b1.png"
             });
 
             _caroucel.Add(new Carousel()
@@ -65,7 +65,7 @@ namespace LittleBooksStore.Services
                 Id = 2,
                 Title = "New Book",
                 Description = "All brand new books",
-                ImageURL = ""
+                ImageURL = "b2.png"
             });
 
             _caroucel.Add(new Carousel()
@@ -73,7 +73,7 @@ namespace LittleBooksStore.Services
                 Id = 3,
                 Title = "Sunscription",
                 Description = "Discount on monthly Sunscription",
-                ImageURL = ""
+                ImageURL = "b3.png"
             });
 
         }
